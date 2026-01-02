@@ -444,4 +444,7 @@ body {
         text-align: center;
         padding: 18px 20px;
     }
+    .main-content {
+    background: transparent;
+    }
 }
