@@ -105,13 +105,13 @@ class TerminalEffect {
 
     typeLine() {
     // Если линий стало слишком много (например, больше 50), очищаем или переносим
-    if (this.currentLine >= this.commands.length) {
-        this.currentLine = 0;
+        if (this.currentLine >= this.commands.length) {
+            this.currentLine = 0;
         // Вместо полной очистки можно оставить последние строки для плавности
-        if (this.terminal.childNodes.length > 50) {
-            this.terminal.innerHTML = ''; 
+            if (this.terminal.childNodes.length > 50) {
+                this.terminal.innerHTML = ''; 
+            }
         }
-    }
 
     const line = this.commands[this.currentLine];
     const lineElement = document.createElement('div');
