@@ -1,4 +1,6 @@
-/* CSS - Original design, not copied */
+/* =========================
+   BASE / RESET
+========================= */
 :root {
     --bg-light: #f5f5f5;
     --bg-white: #ffffff;
@@ -28,21 +30,20 @@ html {
 
 body {
     font-family: var(--font-sans);
-    background: var(--bg-light);
+    background: transparent; /* КЛЮЧЕВО */
     color: var(--text-dark);
+    overflow-x: hidden;
 }
 
-/* Terminal Background */
+/* =========================
+   TERMINAL BACKGROUND
+========================= */
 .terminal-bg {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: var(--bg-dark);
     z-index: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -60,52 +61,52 @@ body {
 
 @keyframes glow {
     from { opacity: 0.15; text-shadow: 0 0 10px var(--accent-dim); }
-    to { opacity: 0.25; text-shadow: 0 0 20px var(--accent), 0 0 30px var(--accent-dim); }
+    to   { opacity: 0.25; text-shadow: 0 0 20px var(--accent), 0 0 30px var(--accent-dim); }
 }
 
 .terminal-content {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     font-family: var(--font-mono);
     font-size: 9px;
     color: rgba(139, 92, 246, 0.08);
-    white-space: pre-wrap;
     padding: 15px;
-    overflow: hidden;
+    white-space: pre-wrap;
     pointer-events: none;
+    overflow: hidden;
 }
 
-/* Main Content */
+/* =========================
+   MAIN CONTENT LAYER
+========================= */
 .main-content {
     position: relative;
-    z-index: 1;
-    background: var(--bg-light);
+    z-index: 2;
+    padding-top: 90px; /* компенсация fixed header */
+    background: transparent; /* КЛЮЧЕВО */
 }
 
-/* Header */
+/* =========================
+   HEADER
+========================= */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 50px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 50px;
     background: rgba(245, 245, 245, 0.95);
     backdrop-filter: blur(8px);
-    z-index: 100;
 }
 
 .logo {
     font-family: var(--font-mono);
     font-size: 1.1rem;
     font-weight: 700;
-    color: var(--text-dark);
-    letter-spacing: -1px;
 }
 
 .nav {
@@ -114,22 +115,24 @@ body {
 }
 
 .nav a {
-    color: var(--text-gray);
     text-decoration: none;
     font-size: 0.85rem;
-    transition: color 0.2s;
+    color: var(--text-gray);
 }
 
 .nav a:hover {
     color: var(--text-dark);
 }
 
-/* Hero */
+/* =========================
+   HERO
+========================= */
 .hero {
     min-height: 100vh;
+    padding: 80px 50px 60px;
     display: flex;
     align-items: center;
-    padding: 100px 50px 60px;
+    background: rgba(245,245,245,0.95);
 }
 
 .hero-left {
@@ -138,17 +141,14 @@ body {
 
 .hero-title {
     font-size: clamp(2rem, 3.5vw, 2.8rem);
-    font-weight: 600;
     line-height: 1.1;
-    letter-spacing: -0.5px;
     margin-bottom: 22px;
-    color: var(--text-dark);
 }
 
 .hero-desc {
     font-size: 0.9rem;
-    color: var(--text-gray);
     line-height: 1.7;
+    color: var(--text-gray);
     margin-bottom: 32px;
 }
 
@@ -157,41 +157,29 @@ body {
     gap: 35px;
 }
 
-.stat {
-    text-align: left;
-}
-
 .stat-num {
-    display: block;
     font-family: var(--font-mono);
     font-size: 1.6rem;
-    font-weight: 700;
     color: var(--accent);
-    margin-bottom: 3px;
 }
 
-.stat-txt {
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+/* =========================
+   SECTIONS BACKGROUNDS
+========================= */
+.projects,
+.philosophy,
+.contact,
+.footer {
+    background: rgba(245,245,245,0.95);
 }
 
-/* Projects */
+/* =========================
+   PROJECTS
+========================= */
 .projects {
     padding: 70px 50px;
     max-width: 800px;
     margin: 0 auto;
-}
-
-.section-title {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    margin-bottom: 25px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
 }
 
 .projects-grid {
@@ -211,69 +199,13 @@ body {
 }
 
 .project-card:hover {
-    border-color: var(--accent);
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.08);
+    border-color: var(--accent);
 }
 
-.project-status {
-    display: inline-block;
-    font-family: var(--font-mono);
-    font-size: 0.55rem;
-    padding: 3px 7px;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-
-.project-status.live {
-    background: rgba(34, 197, 94, 0.1);
-    color: var(--success);
-}
-
-.project-status.classified {
-    background: rgba(239, 68, 68, 0.1);
-    color: var(--danger);
-}
-
-.project-status.dev {
-    background: rgba(245, 158, 11, 0.1);
-    color: var(--warning);
-}
-
-.project-status.this {
-    background: rgba(139, 92, 246, 0.1);
-    color: var(--accent);
-}
-
-.project-card h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--text-dark);
-}
-
-.project-card p {
-    font-size: 0.8rem;
-    color: var(--text-gray);
-    margin-bottom: 12px;
-    line-height: 1.5;
-}
-
-.tags {
-    display: flex;
-    gap: 6px;
-}
-
-.tags span {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    padding: 3px 8px;
-    background: var(--bg-light);
-    border-radius: 4px;
-    color: var(--accent);
-}
-
-/* Philosophy */
+/* =========================
+   PHILOSOPHY
+========================= */
 .philosophy {
     padding: 70px 50px;
     max-width: 600px;
@@ -284,167 +216,40 @@ body {
     background: var(--bg-dark);
     border-radius: 14px;
     padding: 35px;
+    color: rgba(255,255,255,0.75);
 }
 
-.philosophy-box p {
-    font-size: 0.85rem;
-    line-height: 1.8;
-    margin-bottom: 12px;
-    color: rgba(255, 255, 255, 0.75);
-}
-
-.philosophy-box p:first-child {
-    color: #ffffff;
-}
-
-.quote {
-    font-family: var(--font-mono);
-    font-size: 1.1rem;
-    color: var(--accent);
-    margin-top: 20px !important;
-    padding-left: 15px;
-    border-left: 2px solid var(--accent);
-}
-
-/* Contact */
+/* =========================
+   CONTACT
+========================= */
 .contact {
     padding: 70px 50px;
-    background: var(--bg-white);
     text-align: center;
 }
 
-.contact .section-title {
-    display: block;
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.contact-grid {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    max-width: 650px;
-    margin: 0 auto 20px;
-}
-
-.contact-card {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    padding: 20px 12px;
-    background: var(--bg-light);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.2s ease;
-}
-
-.contact-card:hover {
-    border-color: var(--accent);
-}
-
-.contact-icon {
-    font-size: 1.3rem;
-}
-
-.contact-text {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--text-dark);
-}
-
-.contact-desc {
-    font-size: 0.65rem;
-    color: var(--text-muted);
-}
-
-.contact-note {
-    max-width: 450px;
-    margin: 0 auto;
-    padding: 16px;
-    background: var(--bg-light);
-    border-radius: 8px;
-}
-
-.contact-note p {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    margin-bottom: 5px;
-}
-
-.contact-note p:last-child {
-    margin-bottom: 0;
-}
-
-/* Footer */
+/* =========================
+   FOOTER
+========================= */
 .footer {
-    display: flex;
-    justify-content: space-between;
     padding: 20px 50px;
-    background: var(--bg-white);
-    border-top: 1px solid var(--border);
     font-size: 0.7rem;
     color: var(--text-muted);
+    border-top: 1px solid var(--border);
 }
 
-.status {
-    font-family: var(--font-mono);
-    color: var(--success);
-}
-
-/* Responsive */
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 768px) {
-    .header {
-        padding: 18px 20px;
-    }
-
-    .nav {
-        gap: 22px;
-    }
-
-    .hero {
-        padding: 90px 20px 50px;
-    }
-
-    .hero-stats {
-        flex-wrap: wrap;
-        gap: 22px;
-    }
-
-    .projects {
-        padding: 50px 20px;
-    }
-
     .projects-grid {
         grid-template-columns: 1fr;
     }
 
-    .philosophy {
-        padding: 50px 20px;
-    }
-
-    .philosophy-box {
-        padding: 25px 20px;
-    }
-
-    .contact {
-        padding: 50px 20px;
-    }
-
-    .contact-grid {
-        flex-direction: column;
-    }
-
-    .footer {
-        flex-direction: column;
-        gap: 8px;
-        text-align: center;
+    .header {
         padding: 18px 20px;
     }
-    .main-content {
-    background: transparent;
+
+    .hero {
+        padding: 80px 20px 50px;
     }
 }
