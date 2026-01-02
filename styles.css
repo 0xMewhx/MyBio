@@ -2,7 +2,9 @@
 :root {
     --bg-light: #f5f5f5;
     --bg-white: #ffffff;
-    --bg-dark: #0d0d0d;
+    --bg-dark: #080808;
+    --terminal-green: #22c55e;
+    --terminal-white: rgba(255, 255, 255, 0.15);
     --text-dark: #1a1a1a;
     --text-gray: #6b6b6b;
     --text-muted: #9a9a9a;
@@ -28,8 +30,8 @@ html {
 
 body {
     font-family: var(--font-sans);
-    background: var(--bg-light);
-    color: var(--text-dark);
+    background: var(--bg-dark);
+    color: #e0e0e0;
 }
 
 /* Terminal Background */
@@ -71,7 +73,7 @@ body {
     height: 100%;
     font-family: var(--font-mono);
     font-size: 9px;
-    color: rgba(139, 92, 246, 0.08);
+    color: var(--terminal-white);
     white-space: pre-wrap;
     padding: 15px;
     overflow: hidden;
@@ -203,12 +205,13 @@ body {
 }
 
 .project-card {
-    background: var(--bg-white);
-    border: 1px solid var(--border);
+    background: rgba(20, 20, 20, 0.6) !important;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(139, 92, 246, 0.2) !important;
     border-radius: 12px;
     padding: 22px;
     text-decoration: none;
-    color: inherit;
+    color: #ffffff !important;
     transition: all 0.2s ease;
 }
 
@@ -251,12 +254,12 @@ body {
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 8px;
-    color: var(--text-dark);
+    color: var(--accent) !important;
 }
 
 .project-card p {
     font-size: 0.8rem;
-    color: var(--text-gray);
+    color: #b0b0b0 !important;
     margin-bottom: 12px;
     line-height: 1.5;
 }
@@ -311,7 +314,7 @@ body {
 /* Contact */
 .contact {
     padding: 70px 50px;
-    background: var(--bg-white);
+    background: transparent !important;
     text-align: center;
 }
 
@@ -336,11 +339,12 @@ body {
     align-items: center;
     gap: 6px;
     padding: 20px 12px;
-    background: var(--bg-light);
-    border: 1px solid var(--border);
+    background: rgba(20, 20, 20, 0.6) !important;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(139, 92, 246, 0.2) !important;
     border-radius: 10px;
     text-decoration: none;
-    color: inherit;
+    color: #ffffff !important;
     transition: all 0.2s ease;
 }
 
@@ -355,7 +359,7 @@ body {
 .contact-text {
     font-family: var(--font-mono);
     font-size: 0.75rem;
-    color: var(--text-dark);
+    color: var(--accent) !important;
 }
 
 .contact-desc {
@@ -367,7 +371,8 @@ body {
     max-width: 450px;
     margin: 0 auto;
     padding: 16px;
-    background: var(--bg-light);
+    border: 1px solid rgba(139, 92, 246, 0.1);
+    background: rgba(139, 92, 246, 0.05) !important;
     border-radius: 8px;
 }
 
@@ -386,10 +391,10 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 20px 50px;
-    background: var(--bg-white);
-    border-top: 1px solid var(--border);
+    background: rgba(10, 10, 10, 0.9) !important;
+    border-top: 1px solid rgba(139, 92, 246, 0.2) !important;
     font-size: 0.7rem;
-    color: var(--text-muted);
+    color: #666 !important;
 }
 
 .status {
