@@ -57,12 +57,17 @@ body {
     text-align: center;
     white-space: pre;
     opacity: 0.2;
-    animation: glow 3s ease-in-out infinite alternate;
+    position: relative;
+    /* Добавляем анимацию глитча */
+    animation: glow 3s ease-in-out infinite alternate, glitch 5s infinite;
 }
 
-@keyframes glow {
-    from { opacity: 0.15; text-shadow: 0 0 10px var(--accent-dim); }
-    to { opacity: 0.25; text-shadow: 0 0 20px var(--accent), 0 0 30px var(--accent-dim); }
+@keyframes glitch {
+    0%, 95%, 100% { transform: translate(0); text-shadow: 0 0 10px var(--accent-dim); }
+    96% { transform: translate(-2px, 1px); text-shadow: 2px 0 #ff00c1, -2px 0 #00fff9; }
+    97% { transform: translate(2px, -1px); }
+    98% { transform: translate(-1px, -2px); }
+    99% { transform: translate(1px, 2px); }
 }
 
 .terminal-content {
