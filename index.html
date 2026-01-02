@@ -7,11 +7,19 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Terminal Background Effect -->
-    <div class="terminal-bg" id="terminal">
+    <!-- Big Terminal Background with Banner -->
+    <div class="big-terminal" id="terminal">
+        <pre class="terminal-banner">
+    ██████╗ ██╗  ██╗███╗   ███╗███████╗██╗    ██╗
+   ██╔═████╗╚██╗██╔╝████╗ ████║██╔════╝██║    ██║
+   ██║██╔██║ ╚███╔╝ ██╔████╔██║█████╗  ██║ █╗ ██║
+   ████╔╝██║ ██╔██╗ ██║╚██╔╝██║██╔══╝  ██║███╗██║
+   ╚██████╔╝██╔╝ ██╗██║ ╚═╝ ██║███████╗╚███╔███╔╝
+    ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝ ╚══╝╚══╝
+        </pre>
         <div class="terminal-content" id="terminal-content"></div>
     </div>
 
@@ -19,197 +27,122 @@
     <main class="main-content">
         <!-- Header -->
         <header class="header">
-            <div class="logo">
-                <span class="logo-bracket">&lt;</span>
-                <span class="logo-text">0xMew</span>
-                <span class="logo-bracket">/&gt;</span>
-            </div>
+            <div class="logo">0xMew</div>
             <nav class="nav">
-                <a href="#about" class="nav-link">кто?</a>
-                <a href="#skills" class="nav-link">что умею</a>
-                <a href="#projects" class="nav-link">штуки</a>
-                <a href="#contact" class="nav-link">контакт</a>
+                <a href="#about">кто?</a>
+                <a href="#projects">штуки</a>
+                <a href="#contact">контакт</a>
             </nav>
         </header>
 
         <!-- Hero Section -->
         <section class="hero" id="about">
-            <div class="hero-content">
+            <div class="hero-text">
                 <h1 class="hero-title">
-                    <span class="hero-title-main">0xMew</span>
-                    <span class="hero-title-sub">just a guy who breaks things</span>
+                    Просто чел,<br>
+ который ломает вещи
                 </h1>
-                <p class="hero-subtitle">
-                    Сижу в консоли больше чем в дискорде. Ломаю сети, чтобы понять как они работают. Нашёл ботнет в своей локалке — сломал его. Теперь делаю сайты для майнкрафт-серверов и иногда ломаю плохих парней.
+                <p class="hero-desc">
+                    Сижу в консоли больше чем в дискорде. Разбираюсь как работают сети. Нашёл ботнет в своей локалке — сломал его. Теперь делаю сайты для майнкрафт-серверов и иногда порчу плохим парням жизнь.
                 </p>
                 <div class="hero-stats">
                     <div class="stat">
-                        <span class="stat-number">∞</span>
-                        <span class="stat-label">часов в терминале</span>
+                        <span class="stat-num">∞</span>
+                        <span class="stat-txt">часов в терминале</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number">1</span>
-                        <span class="stat-label">ботнет уничтожен</span>
+                        <span class="stat-num">1</span>
+                        <span class="stat-txt">ботнет уничтожен</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number">2</span>
-                        <span class="stat-domain">крутых сайта</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Banner Section -->
-        <section class="banner-section">
-            <div class="banner-container">
-                <pre class="banner-art" id="banner-art">
-    ██████╗ ██╗  ██╗███╗   ███╗███████╗██╗    ██╗
-   ██╔═████╗╚██╗██╔╝████╗ ████║██╔════╝██║    ██║
-   ██║██╔██║ ╚███╔╝ ██╔████╔██║█████╗  ██║ █╗ ██║
-   ████╔╝██║ ██╔██╗ ██║╚██╔╝██║██╔══╝  ██║███╗██║
-   ╚██████╔╝██╔╝ ██╗██║ ╚═╝ ██║███████╗╚███╔███╔╝
-    ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝ ╚══╝╚══╝
-                </pre>
-            </div>
-        </section>
-
-        <!-- Skills & About Combined -->
-        <section class="info-section" id="skills">
-            <h2 class="section-title">_ЧТО_Я_ДЕЛАЮ</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>🌐 Сети</h3>
-                    <p>Понимаю как работает интернет. Знаю разницу между TCP и UDP. Могу настроить iptables так, что ты заблокируешь сам себя. Работаю с wireshark, tcpdump, bettercap.</p>
-                    <div class="tags">
-                        <span>MITM</span>
-                        <span>ARP spoof</span>
-                        <span>iptables</span>
-                    </div>
-                </div>
-                <div class="info-card">
-                    <h3>🔐 Безопасность</h3>
-                    <p>Нашёл ботнет в своей сети. Разобрал протокол C2-сервера. Отправил на него ASCII-арт. Сервер сломался. Считаю это своим главным достижением.</p>
-                    <div class="tags">
-                        <span>Active defense</span>
-                        <span>Protocol reversing</span>
-                        <span>Fuzzing</span>
-                    </div>
-                </div>
-                <div class="info-card">
-                    <h3>💻 Код</h3>
-                    <p>Пишу на Bash больше чем на Python. Автоматизирую всё что можно. Скрипты для анализа сети, MITM-фреймворк на 200 строк, сборка для майнкрафта.</p>
-                    <div class="tags">
-                        <span>Bash</span>
-                        <span>Python</span>
-                        <span>Git</span>
-                    </div>
-                </div>
-                <div class="info-card">
-                    <h3>🎮 Minecraft</h3>
-                    <p>Свой сервер. Create + Better Combat. Сезон 3. Больше 1000 скачиваний сборки. Сделал сайт, настроил модпак, написал гайд. Всё сам.</p>
-                    <div class="tags">
-                        <span>Fabric</span>
-                        <span>Server admin</span>
-                        <span>Community</span>
+                        <span class="stat-num">2</span>
+                        <span class="stat-txt">крутых сайта</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section class="projects-section" id="projects">
-            <h2 class="section-title">_ПРОЕКТЫ</h2>
+        <section class="projects" id="projects">
+            <h2 class="section-title">Штуки</h2>
             <div class="projects-grid">
-                <a href="https://mymine.fun" target="_blank" class="project-card">
-                    <div class="project-status active">● LIVE</div>
+                <a href="https://mymine.fun" class="project-card">
+                    <div class="project-status live">● LIVE</div>
                     <h3>MyMine.fun 🎮</h3>
-                    <p>Minecraft сервер с модами. Create, Better Combat, автоматические фермы. Сезон 3 идёт. Сборка на GitHub.</p>
-                    <div class="project-tags">
-                        <span>Minecraft</span>
-                        <span>Fabric</span>
-                        <span>1.20.1</span>
+                    <p>Minecraft сервер с модами. Create, Better Combat. Сезон 3 идёт. Больше 1000 скачиваний сборки.</p>
+                    <div class="tags">
+                        <span>Minecraft</span><span>Fabric</span>
                     </div>
                 </a>
                 <div class="project-card">
-                    <div class="project-status secret">█ CLASSIFIED</div>
+                    <div class="project-status classified">█ CLASSIFIED</div>
                     <h3>C2 Investigation 🔥</h3>
-                    <p>Обнаружил ботнет в локалке. Разобрал протокол C2-сервера на 172.234.100.5. Сломал его фаззингом. Логи забиты моим ASCII-артом.</p>
-                    <div class="project-tags">
-                        <span>Botnet</span>
-                        <span>Protocol analysis</span>
-                        <span>Active defense</span>
+                    <p>Обнаружил ботнет в сети. Разобрал протокол C2-сервера. Сломал его фаззингом. Логи забиты моим ASCII-артом.</p>
+                    <div class="tags">
+                        <span>Botnet</span><span>Active defense</span>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-status dev">● DEV</div>
                     <h3>Network Tools 🛠️</h3>
-                    <p>Набор Bash-скриптов для анализа сети. MITM, сниффер, автоматический поиск подозрительной активности. Ещё в разработке.</p>
-                    <div class="project-tags">
-                        <span>Bash</span>
-                        <span>tcpdump</span>
-                        <span>bettercap</span>
+                    <p>Скрипты для анализа сети. MITM, сниффер, поиск подозрительной активности. Ещё в процессе.</p>
+                    <div class="tags">
+                        <span>Bash</span><span>tcpdump</span>
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-status site">◉ THIS</div>
+                    <div class="project-status this">◉ THIS</div>
                     <h3>0xmew.site ⚡</h3>
-                    <p>Сайт-портфолио. Сделан за один вечер. GitHub Pages + бесплатный SSL. Терминальный фон с отсылками к реальным кейсам.</p>
-                    <div class="project-tags">
-                        <span>HTML/CSS/JS</span>
-                        <span>GitHub Pages</span>
-                        <span>ASCII art</span>
+                    <p>Сайт-портфолио. Сделан за вечер. GitHub Pages, бесплатный SSL. Терминальный фон.</p>
+                    <div class="tags">
+                        <span>HTML/CSS</span><span>GitHub Pages</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Philosophy Section -->
-        <section class="philosophy-section">
+        <!-- Philosophy -->
+        <section class="philosophy">
             <div class="philosophy-content">
-                <h2 class="section-title">_ФИЛОСОФИЯ</h2>
-                <div class="philosophy-text">
-                    <p>Я не читаю документацию. Я ломаю системы и смотрю что внутри.</p>
-                    <p>Каждый странный пакет — загадка. Каждый закрытый порт — вызов.</p>
-                    <p>Если в моей сети есть что-то, что я не контролирую — я это найду.</p>
-                    <p>Если кто-то юзает мою сеть для плохого — он об этом пожалеет.</p>
-                    <p class="quote">"Если не я, то кто?"</p>
-                    <p class="subtitle">— 0xMew, после уничтожения ботнета</p>
-                </div>
+                <p>Я не читаю документацию. Я ломаю системы и смотрю что внутри.</p>
+                <p>Каждый странный пакет — загадка. Каждый закрытый порт — вызов.</p>
+                <p>Если в моей сети есть что-то, что я не контролирую — я это найду.</p>
+                <p>Если кто-то юзает мою сеть для плохого — он об этом пожалеет.</p>
+                <p class="quote">"Если не я, то кто?"</p>
+                <p class="subtitle">— после уничтожения ботнета</p>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="contact-section" id="contact">
-            <h2 class="section-title">_СВЯЗЬ</h2>
+        <!-- Contact -->
+        <section class="contact" id="contact">
+            <h2 class="section-title">Связь</h2>
             <div class="contact-grid">
                 <a href="mailto:0xmew@proton.me" class="contact-card">
                     <span class="contact-icon">📧</span>
                     <span class="contact-text">0xmew@proton.me</span>
-                    <span class="contact-desc">Самый безопасный имейл</span>
+                    <span class="contact-desc">самый безопасный имейл</span>
                 </a>
-                <a href="https://t.me/bluzn" target="_blank" class="contact-card">
+                <a href="https://t.me/bluzn" class="contact-card">
                     <span class="contact-icon">💬</span>
                     <span class="contact-text">@bluzn</span>
                     <span class="contact-desc">Telegram</span>
                 </a>
-                <a href="https://github.com/0xmewhx" target="_blank" class="contact-card">
+                <a href="https://github.com/0xmewhx" class="contact-card">
                     <span class="contact-icon">🐙</span>
                     <span class="contact-text">@0xmewhx</span>
                     <span class="contact-desc">GitHub (да, меня опередили)</span>
                 </a>
             </div>
             <div class="contact-note">
-                <p>Если ты дочитал до сюда — ты либо мой друг, либо мы знакомы.</p>
-                <p>Если ты случайный человек — добро пожаловать! Но лучше иди на mymine.fun, там веселее. 🎮</p>
+                <p>Если дочитал до сюда — ты либо мой друг, либо мы знакомы.</p>
+                <p>Если случайный человек — добро пожаловать! Но лучше иди на mymine.fun, там веселее.</p>
             </div>
         </section>
 
         <!-- Footer -->
         <footer class="footer">
-            <div class="footer-content">
-                <span>© 2025-2026 0xMew. Сделано в терминале.</span>
-                <span class="status">SECURE /// 0xMew protected</span>
-            </div>
+            <span>© 2025-2026 0xMew</span>
+            <span class="status">SECURE /// 0xMew protected</span>
         </footer>
     </main>
 
