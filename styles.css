@@ -115,7 +115,7 @@ body {
     font-family: var(--font-mono);
     font-size: 1.1rem;
     font-weight: 700;
-    color: var(--text-dark);
+    color: var(--accent) !important; /* Делаем фиолетовым как баннер */
     letter-spacing: -1px;
 }
 
@@ -125,14 +125,14 @@ body {
 }
 
 .nav a {
-    color: var(--text-gray);
+    color: #ffffff; /* Белые ссылки */
     text-decoration: none;
     font-size: 0.85rem;
     transition: color 0.2s;
 }
 
 .nav a:hover {
-    color: var(--text-dark);
+    color: var(--accent); /* Фиолетовый при наведении */
 }
 
 /* Hero */
