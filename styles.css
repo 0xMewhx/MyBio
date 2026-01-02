@@ -218,7 +218,8 @@ body {
 .project-card:hover {
     border-color: var(--accent);
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.08);
+    background: rgba(139, 92, 246, 0.2);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
 }
 
 .project-status {
@@ -272,10 +273,13 @@ body {
 .tags span {
     font-family: var(--font-mono);
     font-size: 0.65rem;
-    padding: 3px 8px;
-    background: var(--bg-light);
+    padding: 2px 8px;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.3);
     border-radius: 4px;
     color: var(--accent);
+    text-transform: lowercase;
+    transition: all 0.2s ease;
 }
 
 /* Philosophy */
