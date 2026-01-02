@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Big Terminal Background with Banner -->
-    <div class="big-terminal" id="terminal">
+    <!-- Terminal Background with Banner -->
+    <div class="terminal-bg" id="terminal">
         <pre class="terminal-banner">
     ██████╗ ██╗  ██╗███╗   ███╗███████╗██╗    ██╗
    ██╔═████╗╚██╗██╔╝████╗ ████║██╔════╝██║    ██║
@@ -25,25 +25,21 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <!-- Header -->
         <header class="header">
-            <div class="logo">0xMew</div>
+            <div class="logo">&lt;0xMew/&gt;</div>
             <nav class="nav">
-                <a href="#about">кто?</a>
-                <a href="#projects">штуки</a>
-                <a href="#contact">контакт</a>
+                <a href="#about">who?</a>
+                <a href="#projects">stuff</a>
+                <a href="#contact">contact</a>
             </nav>
         </header>
 
-        <!-- Hero Section -->
         <section class="hero" id="about">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    Просто чел,<br>
- который ломает вещи
-                </h1>
+            <div class="hero-left">
+                <h1 class="hero-title">just a guy who<br>breaks things</h1>
                 <p class="hero-desc">
-                    Сижу в консоли больше чем в дискорде. Разбираюсь как работают сети. Нашёл ботнет в своей локалке — сломал его. Теперь делаю сайты для майнкрафт-серверов и иногда порчу плохим парням жизнь.
+                    сижу в консоли больше чем в дискорде. разбираюсь как работают сети.
+                    нашёл ботнет в своей локалке — сломал его. делаю сайты для майнкрафт-серверов.
                 </p>
                 <div class="hero-stats">
                     <div class="stat">
@@ -62,87 +58,82 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section class="projects" id="projects">
-            <h2 class="section-title">Штуки</h2>
+            <h2 class="section-title">stuff</h2>
             <div class="projects-grid">
                 <a href="https://mymine.fun" class="project-card">
                     <div class="project-status live">● LIVE</div>
                     <h3>MyMine.fun 🎮</h3>
-                    <p>Minecraft сервер с модами. Create, Better Combat. Сезон 3 идёт. Больше 1000 скачиваний сборки.</p>
+                    <p>minecraft сервер с модами. create + better combat. сезон 3 идёт.</p>
                     <div class="tags">
-                        <span>Minecraft</span><span>Fabric</span>
+                        <span>minecraft</span><span>fabric</span>
                     </div>
                 </a>
                 <div class="project-card">
                     <div class="project-status classified">█ CLASSIFIED</div>
-                    <h3>C2 Investigation 🔥</h3>
-                    <p>Обнаружил ботнет в сети. Разобрал протокол C2-сервера. Сломал его фаззингом. Логи забиты моим ASCII-артом.</p>
+                    <h3>c2 investigation 🔥</h3>
+                    <p>обнаружил ботнет. разобрал протокол. сломал фаззингом. логи забиты моим ascii-артом.</p>
                     <div class="tags">
-                        <span>Botnet</span><span>Active defense</span>
+                        <span>botnet</span><span>active defense</span>
                     </div>
-                </div>
+                </a>
                 <div class="project-card">
                     <div class="project-status dev">● DEV</div>
-                    <h3>Network Tools 🛠️</h3>
-                    <p>Скрипты для анализа сети. MITM, сниффер, поиск подозрительной активности. Ещё в процессе.</p>
+                    <h3>network tools 🛠️</h3>
+                    <p>скрипты для анализа сети. mitm, сниффер, поиск подозрительной активности.</p>
                     <div class="tags">
-                        <span>Bash</span><span>tcpdump</span>
+                        <span>bash</span><span>tcpdump</span>
                     </div>
-                </div>
+                </a>
                 <div class="project-card">
                     <div class="project-status this">◉ THIS</div>
                     <h3>0xmew.site ⚡</h3>
-                    <p>Сайт-портфолио. Сделан за вечер. GitHub Pages, бесплатный SSL. Терминальный фон.</p>
+                    <p>сайт-портфолио. сделан за вечер. github pages + бесплатный ssl.</p>
                     <div class="tags">
-                        <span>HTML/CSS</span><span>GitHub Pages</span>
+                        <span>html/css</span><span>github pages</span>
                     </div>
-                </div>
+                </a>
             </div>
         </section>
 
-        <!-- Philosophy -->
         <section class="philosophy">
-            <div class="philosophy-content">
-                <p>Я не читаю документацию. Я ломаю системы и смотрю что внутри.</p>
-                <p>Каждый странный пакет — загадка. Каждый закрытый порт — вызов.</p>
-                <p>Если в моей сети есть что-то, что я не контролирую — я это найду.</p>
-                <p>Если кто-то юзает мою сеть для плохого — он об этом пожалеет.</p>
-                <p class="quote">"Если не я, то кто?"</p>
-                <p class="subtitle">— после уничтожения ботнета</p>
+            <div class="philosophy-box">
+                <p>я не читаю документацию. я ломаю системы и смотрю что внутри.</p>
+                <p>каждый странный пакет — загадка. каждый закрытый порт — вызов.</p>
+                <p>если в моей сети есть что-то, что я не контролирую — я это найду.</p>
+                <p>если кто-то юзает мою сеть для плохого — он об этом пожалеет.</p>
+                <p class="quote">"если не я, то кто?"</p>
             </div>
         </section>
 
-        <!-- Contact -->
         <section class="contact" id="contact">
-            <h2 class="section-title">Связь</h2>
+            <h2 class="section-title">contact</h2>
             <div class="contact-grid">
                 <a href="mailto:0xmew@proton.me" class="contact-card">
                     <span class="contact-icon">📧</span>
                     <span class="contact-text">0xmew@proton.me</span>
-                    <span class="contact-desc">самый безопасный имейл</span>
+                    <span class="contact-desc">proton mail</span>
                 </a>
                 <a href="https://t.me/bluzn" class="contact-card">
                     <span class="contact-icon">💬</span>
                     <span class="contact-text">@bluzn</span>
-                    <span class="contact-desc">Telegram</span>
+                    <span class="contact-desc">telegram</span>
                 </a>
                 <a href="https://github.com/0xmewhx" class="contact-card">
                     <span class="contact-icon">🐙</span>
                     <span class="contact-text">@0xmewhx</span>
-                    <span class="contact-desc">GitHub (да, меня опередили)</span>
+                    <span class="contact-desc">github</span>
                 </a>
             </div>
             <div class="contact-note">
-                <p>Если дочитал до сюда — ты либо мой друг, либо мы знакомы.</p>
-                <p>Если случайный человек — добро пожаловать! Но лучше иди на mymine.fun, там веселее.</p>
+                <p>если дочитал до сюда — ты либо мой друг, либо мы знакомы.</p>
+                <p>если случайный — добро пожаловать. но лучше на mymine.fun.</p>
             </div>
         </section>
 
-        <!-- Footer -->
         <footer class="footer">
             <span>© 2025-2026 0xMew</span>
-            <span class="status">SECURE /// 0xMew protected</span>
+            <span class="status">secure /// 0xMew protected</span>
         </footer>
     </main>
 
