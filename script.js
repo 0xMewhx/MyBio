@@ -1,58 +1,136 @@
-// Terminal Effect - Hollywood Style
+// Terminal Effect - /dev/urandom style with real case references
 class TerminalEffect {
     constructor() {
         this.terminal = document.getElementById('terminal-content');
         this.commands = [
-            ' initializing system...',
-            ' loading kernel modules...',
-            ' mounting file systems...',
-            ' [OK] network interfaces configured',
-            ' [OK] firewall rules loaded',
-            ' [OK] SSL certificates verified',
-            ' connecting to remote host...',
-            ' 172.234.100.5: connection established',
-            ' analyzing packet structure...',
-            ' protocol: custom HTTP (kuA)',
-            ' payload: decoded successfully',
-            ' [ALERT] suspicious activity detected',
-            ' initiating counter-measures...',
-            ' arp spoofing: ACTIVE',
-            ' traffic redirection: ENABLED',
-            ' [OK] target identification complete',
-            ' analyzing network topology...',
-            ' gateway: 192.168.0.1',
-            ' hosts: 192.168.0.100, 192.168.0.108',
-            ' [INFO] guest device .105 flagged',
-            ' C2 server: 172.234.100.5 (Linode, SE)',
-            ' protocol reverse engineering...',
-            ' extracting headers...',
-            ' Host: www.paymenthardwarenoteglow.com',
-            ' Cookie: N=7SSEwErthhY',
-            ' Content-Type: text/plain; charset=utf-8',
-            ' method: kuA (custom)',
-            ' crafting payload...',
-            ' sending test request...',
-            ' response: 404 Not Found',
-            ' fuzzing protocol...',
-            ' input: /dev/urandom (212 bytes)',
-            ' response: chunk hex-length error',
-            ' server stability: COMPROMISED',
-            ' injecting banner...',
-            ' "0xMew protected" > logs',
-            ' [SUCCESS] C2 corrupted',
-            ' logging session...',
-            ' user: 0xMew',
-            ' privilege: root',
-            ' access: granted',
-            ' system status: secure',
-            ' uptime: ' + this.getUptime(),
-            ' memory: ' + this.getMemoryUsage(),
-            ' load average: 0.15, 0.08, 0.03',
-            ' _',
+            // System boot
+            ' [BOOT] kernel loaded at 0xffffffff80000000',
+            ' [BOOT] initial RAM disk: /boot/initramfs-linux.img',
+            ' [BOOT] systemd-journald: Journal started',
+            ' [OK] network namespace created',
+            ' [OK] net.ipv4.ip_forward = 1',
+            ' [OK] iptables: FORWARD policy DROP',
+            '',
+            // Network scanning
+            ' scanning 192.168.0.0/24...',
+            ' 192.168.0.1   : TP-LINK router     [ gateway ]',
+            ' 192.168.0.100 : Samsung SM-G990B  [ phone ]',
+            ' 192.168.0.101 : localhost          [ ME ]',
+            ' 192.168.0.105 : Unknown device     [ SUSPICIOUS ]',
+            ' 192.168.0.108 : iPhone             [ mom ]',
+            '',
+            // ARP spoofing status
+            ' [ARP] poisoning: 192.168.0.100 <- 192.168.0.101',
+            ' [ARP] poisoning: 192.168.0.108 <- 192.168.0.101',
+            ' [ARP] target count: 2',
+            ' [INFO] redirecting DNS queries...',
+            '',
+            // Packet analysis
+            ' [PKT] TCP: 192.168.0.105:48132 -> 172.234.100.5:80',
+            ' [PKT] TCP: 192.168.0.105:48133 -> 172.234.100.5:80',
+            ' [PKT] TCP: 192.168.0.105:48134 -> 172.234.100.5:80',
+            ' [HTTP] POST /api/cmd HTTP/1.1',
+            ' [HTTP] Host: www.paymenthardwarenoteglow.com',
+            ' [HTTP] Cookie: N=7SSEwErthhY',
+            ' [HTTP] Content-Type: text/plain; charset=utf-8',
+            ' [HTTP] Content-Length: 47',
+            ' [DATA] 0x1a3d8f2b4c5e9d0f1a2b3c4d5e6f7a8b',
+            '',
+            // C2 investigation
+            ' [ANALYSIS] C2 server identified: 172.234.100.5',
+            ' [ANALYSIS] Hosting: Linode, Stockholm, Sweden',
+            ' [ANALYSIS] Protocol: custom HTTP (method: kuA)',
+            ' [ANALYSIS] SSL: yes (Let\'s Encrypt)',
+            '',
+            // Reverse engineering
+            ' [RE] extracting protocol structure...',
+            ' [RE] method: kuA (custom, not standard)',
+            ' [RE] headers: Host, Cookie, Content-Type',
+            ' [RE] payload: encrypted, 32-byte blocks',
+            ' [RE] response: 200 OK (empty body)',
+            '',
+            // Fuzzing the C2
+            ' [FUZZ] generating random payload...',
+            ' [FUZZ] /dev/urandom: 212 bytes written',
+            ' [FUZZ] sending to 172.234.100.5:80...',
+            ' [RESP] HTTP/1.1 404 Not Found',
+            ' [RESP] chunked transfer encoding error',
+            ' [ERROR] chunk hex-length char not a hex digit: 0xd',
+            ' [FUZZ] server confused: SUCCESS',
+            '',
+            // Banner injection
+            ' [INJECT] crafting ASCII art payload...',
+            ' [INJECT] ' + this.generateRandomHex(40),
+            ' [INJECT] ' + this.generateRandomHex(40),
+            ' [INJECT] sending banner to C2 server...',
+            ' [LOG] 0xMew protected > /var/log/c2.log',
+            ' [SUCCESS] C2 server logs corrupted',
+            '',
+            // Spam operation (accidental DDoS)
+            ' [SPAM] curl command repeated...',
+            ' [SPAM] request count: ' + Math.floor(Math.random() * 50 + 20),
+            ' [SPAM] 172.234.100.5:80 - connection established',
+            ' [SPAM] 172.234.100.5:80 - connection established',
+            ' [SPAM] 172.234.100.5:80 - connection established',
+            ' [WARN] accidental DDoS achieved',
+            '',
+            // Minecraft server
+            ' [MC] server status: online',
+            ' [MC] version: 1.20.1 (Fabric)',
+            ' [MC] players: 0/' + Math.floor(Math.random() * 10 + 2),
+            ' [MC] world: MyMine_fabric_season_3',
+            ' [MC] mods loaded: ' + Math.floor(Math.random() * 40 + 60),
+            '',
+            // Shell history style
+            ' 0xMew@arch:~$ nmap -sS 192.168.0.0/24',
+            ' 0xMew@arch:~$ tcpdump -i wlan0 -w capture.pcap',
+            ' 0xMew@arch:~$ bettercap -iface wlan0',
+            ' 0xMew@arch:~$ curl -X kuA -d @/dev/urandom http://...',
+            ' 0xMew@arch:~$ sudo iptables -I FORWARD -j DROP',
+            ' 0xMew@arch:~$ echo "0xMew protected" | nc 172.234.100.5 80',
+            '',
+            // /dev/urandom style output
+            ' ' + this.generateRandomHex(78),
+            ' ' + this.generateRandomHex(78),
+            ' ' + this.generateRandomHex(78),
+            ' ' + this.generateRandomHex(78),
+            ' ' + this.generateRandomAscii(60),
+            ' ' + this.generateRandomAscii(60),
+            ' ' + this.generateRandomAscii(60),
+            '',
+            // Process list style
+            ' PID    COMMAND           %CPU   MEM',
+            ' 1      /sbin/init        0.1    0.2',
+            ' 420    bash              0.0    0.1',
+            ' 1337   bettercap         2.5    1.8',
+            ' 7331   tcpdump          0.3    0.4',
+            ' 9999   curl             0.1    0.1',
+            ' 31415  vim              0.0    0.1',
+            '',
+            // System info
+            ' [INFO] hostname: arch',
+            ' [INFO] kernel: Linux 6.12.1-arch1-1 x86_64',
+            ' [INFO] uptime: ' + this.getUptime(),
+            ' [INFO] memory: ' + this.getMemory(),
+            ' [INFO] disk: /dev/sda1 256GB SSD',
+            ' [INFO] cpu: AMD Ryzen 5 5600X',
+            '',
+            // Load average and system status
+            ' load average: 0.' + Math.floor(Math.random() * 30 + 5) + ', 0.' + Math.floor(Math.random() * 20 + 3) + ', 0.' + Math.floor(Math.random() * 15 + 1),
+            ' processes: ' + Math.floor(Math.random() * 150 + 80) + ' running, ' + Math.floor(Math.random() * 50 + 20) + ' sleeping',
+            ' users: 1 logged in',
+            '',
+            // Random tech stuff
+            ' [+] npm packages installed: ' + Math.floor(Math.random() * 100 + 50),
+            ' [+] github commits: ' + Math.floor(Math.random() * 200 + 50),
+            ' [+] cups printed: 0 (why would i?)',
+            ' [+] terminal hours: ∞',
+            '',
+            // Final cursor
+            ' 0xMew@arch:~$ _',
         ];
         this.currentLine = 0;
-        this.typeSpeed = 30;
-        this.lineDelay = 100;
+        this.lineDelay = 80;
         this.init();
     }
 
@@ -60,15 +138,33 @@ class TerminalEffect {
         this.typeLine();
     }
 
+    generateRandomHex(length) {
+        const chars = '0123456789abcdef';
+        let result = '0x';
+        for (let i = 0; i < length; i++) {
+            result += chars[Math.floor(Math.random() * chars.length)];
+        }
+        return result;
+    }
+
+    generateRandomAscii(length) {
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?';
+        let result = '';
+        for (let i = 0; i < length; i++) {
+            result += chars[Math.floor(Math.random() * chars.length)];
+        }
+        return result;
+    }
+
     getUptime() {
-        const days = Math.floor(Math.random() * 15) + 1;
+        const days = Math.floor(Math.random() * 10) + 1;
         const hours = Math.floor(Math.random() * 24);
         const mins = Math.floor(Math.random() * 60);
         return `${days}d ${hours}h ${mins}m`;
     }
 
-    getMemoryUsage() {
-        const used = (Math.random() * 2 + 0.5).toFixed(2);
+    getMemory() {
+        const used = (Math.random() * 3 + 1).toFixed(2);
         const total = '16.00';
         return `${used}GB / ${total}GB`;
     }
@@ -81,222 +177,121 @@ class TerminalEffect {
 
         const line = this.commands[this.currentLine];
         const lineElement = document.createElement('div');
-        lineElement.className = 'terminal-line';
         lineElement.style.opacity = '0';
 
-        // Add different prefixes based on content
-        let formattedLine = line;
-        if (line.includes('[OK]')) {
-            formattedLine = line.replace('[OK]', '<span style="color: #22c55e;">[OK]</span>');
-        } else if (line.includes('[ALERT]')) {
-            formattedLine = line.replace('[ALERT]', '<span style="color: #f59e0b;">[ALERT]</span>');
-        } else if (line.includes('[INFO]')) {
-            formattedLine = line.replace('[INFO]', '<span style="color: #3b82f6;">[INFO]</span>');
-        } else if (line.includes('[SUCCESS]')) {
-            formattedLine = line.replace('[SUCCESS]', '<span style="color: #22c55e;">[SUCCESS]</span>');
-        } else if (line.includes('[ERROR]') || line.includes('error')) {
-            formattedLine = line.replace('[ERROR]', '<span style="color: #ef4444;">[ERROR]</span>');
-            formattedLine = formattedLine.replace('error', '<span style="color: #ef4444;">error</span>');
-        } else if (line.includes('_')) {
-            formattedLine = '<span style="color: #22c55e;">></span> <span class="cursor">_</span>';
-        } else if (line.startsWith(' ')) {
-            formattedLine = '<span style="color: #3b82f6;">│</span>' + formattedLine;
-        }
-
+        let formattedLine = this.formatLine(line);
         lineElement.innerHTML = formattedLine;
         this.terminal.appendChild(lineElement);
 
-        // Fade in
         setTimeout(() => {
-            lineElement.style.transition = 'opacity 0.3s ease';
+            lineElement.style.transition = 'opacity 0.15s ease';
             lineElement.style.opacity = '1';
-        }, 10);
+        }, 5);
 
         this.currentLine++;
-
-        // Random delay for more natural feel
-        const delay = this.lineDelay + Math.random() * 200;
-
+        const delay = this.lineDelay + Math.random() * 100;
         setTimeout(() => this.typeLine(), delay);
+    }
+
+    formatLine(line) {
+        // Add colors and formatting based on content
+        let formatted = line;
+
+        if (line.includes('[BOOT]')) {
+            formatted = '<span style="color: #3b82f6;">[BOOT]</span>' + line.substring(6);
+        } else if (line.includes('[OK]')) {
+            formatted = '<span style="color: #22c55e;">[OK]</span>' + line.substring(4);
+        } else if (line.includes('[ARP]')) {
+            formatted = '<span style="color: #8b5cf6;">[ARP]</span>' + line.substring(5);
+        } else if (line.includes('[PKT]') || line.includes('[HTTP]')) {
+            formatted = '<span style="color: #06b6d4;">[PKT]</span>' + line.substring(5);
+        } else if (line.includes('[ANALYSIS]') || line.includes('[RE]')) {
+            formatted = '<span style="color: #f59e0b;">[ANALYSIS]</span>' + line.substring(11);
+        } else if (line.includes('[FUZZ]')) {
+            formatted = '<span style="color: #ec4899;">[FUZZ]</span>' + line.substring(6);
+        } else if (line.includes('[INJECT]')) {
+            formatted = '<span style="color: #a855f7;">[INJECT]</span>' + line.substring(8);
+        } else if (line.includes('[ERROR]') || line.includes('[WARN]')) {
+            formatted = '<span style="color: #ef4444;">[WARN]</span>' + line.substring(6);
+        } else if (line.includes('[SUCCESS]')) {
+            formatted = '<span style="color: #22c55e;">[SUCCESS]</span>' + line.substring(9);
+        } else if (line.includes('[SPAM]')) {
+            formatted = '<span style="color: #f97316;">[SPAM]</span>' + line.substring(6);
+        } else if (line.includes('[MC]')) {
+            formatted = '<span style="color: #22c55e;">[MC]</span>' + line.substring(4);
+        } else if (line.includes('[INFO]')) {
+            formatted = '<span style="color: #3b82f6;">[INFO]</span>' + line.substring(6);
+        } else if (line.includes('0xMew@')) {
+            formatted = '<span style="color: #a855f7;">' + line.split('@')[0] + '</span>@' + line.split('@')[1];
+        } else if (line.includes('PID') || line.includes('---')) {
+            formatted = '<span style="color: #8888a0;">' + line + '</span>';
+        } else if (line.includes('_')) {
+            formatted = '<span style="color: #22c55e;">></span> <span class="cursor">_</span>';
+        } else if (line === '') {
+            return '<br>';
+        }
+
+        return formatted;
     }
 }
 
-// Smooth scroll for navigation
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
 });
 
-// Typing effect for hero title
-class TypeWriter {
-    constructor(element, texts, speed = 100) {
-        this.element = element;
-        this.texts = texts;
-        this.speed = speed;
-        this.textIndex = 0;
-        this.charIndex = 0;
-        this.isDeleting = false;
-        this.init();
-    }
-
-    init() {
-        this.type();
-    }
-
-    type() {
-        const currentText = this.texts[this.textIndex];
-
-        if (this.isDeleting) {
-            this.element.textContent = currentText.substring(0, this.charIndex - 1);
-            this.charIndex--;
-        } else {
-            this.element.textContent = currentText.substring(0, this.charIndex + 1);
-            this.charIndex++;
-        }
-
-        let typeSpeed = this.speed;
-
-        if (!this.isDeleting && this.charIndex === currentText.length) {
-            typeSpeed = 2000;
-            this.isDeleting = true;
-        } else if (this.isDeleting && this.charIndex === 0) {
-            this.isDeleting = false;
-            this.textIndex = (this.textIndex + 1) % this.texts.length;
-            typeSpeed = 500;
-        }
-
-        setTimeout(() => this.type(), typeSpeed);
-    }
-}
-
-// Initialize typing effect when page loads
+// Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    // Start terminal effect
     new TerminalEffect();
 
-    // Typing effect for hero
-    const heroTitle = document.querySelector('.typing-effect');
-    if (heroTitle) {
-        const texts = ['Cyber Security', 'Network', 'Linux', 'Security'];
-        // Only start if not already set by server-side rendering
-        if (!heroTitle.hasAttribute('data-rendered')) {
-            // Keep the data-text value as static content
-        }
-    }
-
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements for animation
-    document.querySelectorAll('.skill-card, .project-card, .philosophy-content').forEach(el => {
-        observer.observe(el);
-    });
-
-    // Add hover effect to skill cards
-    document.querySelectorAll('.skill-card').forEach(card => {
+    // Hover effects for cards
+    document.querySelectorAll('.info-card, .project-card, .contact-card').forEach(card => {
         card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-4px)';
+            card.style.transform = 'translateY(-3px)';
         });
         card.addEventListener('mouseleave', () => {
             card.style.transform = 'translateY(0)';
         });
     });
 
-    // Dynamic stat counter animation
-    document.querySelectorAll('.stat-number').forEach(stat => {
-        const target = stat.textContent;
-        if (target.includes('%') || target.includes('∞') || target.includes('0')) {
-            return; // Skip non-numeric stats
-        }
-
-        const numericValue = parseInt(target);
-        let current = 0;
-        const increment = numericValue / 30;
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= numericValue) {
-                stat.textContent = target;
-                clearInterval(timer);
-            } else {
-                stat.textContent = Math.floor(current);
-            }
-        }, 30);
-    });
-
-    // Cursor blink effect
+    // Cursor blink
     let cursorVisible = true;
     setInterval(() => {
-        const cursors = document.querySelectorAll('.cursor');
-        cursors.forEach(cursor => {
+        document.querySelectorAll('.cursor').forEach(cursor => {
             cursor.style.opacity = cursorVisible ? '1' : '0';
         });
         cursorVisible = !cursorVisible;
     }, 500);
 
-    // Add click effect to project cards
-    document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('click', function(e) {
-            const ripple = document.createElement('span');
-            ripple.style.cssText = `
-                position: absolute;
-                background: rgba(124, 58, 237, 0.3);
-                border-radius: 50%;
-                transform: scale(0);
-                animation: ripple 0.6s linear;
-                pointer-events: none;
-            `;
-
-            const rect = this.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            ripple.style.width = ripple.style.height = size + 'px';
-            ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
-            ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
-
-            this.style.position = 'relative';
-            this.style.overflow = 'hidden';
-            this.appendChild(ripple);
-
-            setTimeout(() => ripple.remove(), 600);
-        });
-    });
+    // Console signature
+    console.log('%c 0xMew ', 'background: #7c3aed; color: white; font-size: 18px; padding: 8px;');
+    console.log('%c just a guy who breaks things ', 'color: #a855f7; font-size: 11px;');
+    console.log('%c "If not me, then who?" ', 'color: #8888a0; font-style: italic;');
 });
 
-// Add ripple animation to CSS
+// Add cursor animation CSS
 const style = document.createElement('style');
 style.textContent = `
-    @keyframes ripple {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
+    .cursor {
+        display: inline-block;
+        width: 8px;
+        height: 1.2em;
+        background: #22c55e;
+        vertical-align: middle;
+        animation: blink 1s step-end infinite;
     }
-
-    .skill-card, .project-card {
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
+    .info-card, .project-card, .contact-card {
+        transition: all 0.3s ease;
     }
 `;
 document.head.appendChild(style);
-
-// Console log signature
-console.log('%c 0xMew ', 'background: #7c3aed; color: white; font-size: 20px; padding: 10px;');
-console.log('%c Security Researcher & Network Explorer ', 'color: #a855f7; font-size: 12px;');
-console.log('%c "If not me, then who?" ', 'color: #8888a0; font-style: italic;');
