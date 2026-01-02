@@ -104,11 +104,39 @@ class TerminalEffect {
     }
 
     typeLine() {
-        if (this.currentLine >= this.commands.length) {
-            this.currentLine = 0;
-            this.terminal.innerHTML = '';
+    // Если линий стало слишком много (например, больше 50), очищаем или переносим
+    if (this.currentLine >= this.commands.length) {
+        this.currentLine = 0;
+        // Вместо полной очистки можно оставить последние строки для плавности
+        if (this.terminal.childNodes.length > 50) {
+            this.terminal.innerHTML = ''; 
         }
+    }
 
+    const line = this.commands[this.currentLine];
+    const lineElement = document.createElement('div');
+    
+    // Делаем текст в терминале чуть более случайным по позиции, чтобы заполнить экран
+    lineElement.style.paddingLeft = Math.random() * 20 + 'px';
+    lineElement.style.opacity = '0';
+
+    let formatted = this.formatLine(line);
+    lineElement.innerHTML = formatted;
+    this.terminal.appendChild(lineElement);
+
+    // Автопрокрутка вниз, если контента много
+    this.terminal.scrollTop = this.terminal.scrollHeight;
+
+    setTimeout(() => {
+        lineElement.style.transition = 'opacity 0.2s ease';
+        lineElement.style.opacity = '1';
+    }, 5);
+
+    this.currentLine++;
+    // Ускоряем вывод, чтобы текста было визуально "много"
+    const delay = 40 + Math.random() * 40; 
+    setTimeout(() => this.typeLine(), delay);
+}
         const line = this.commands[this.currentLine];
         const lineElement = document.createElement('div');
         lineElement.style.opacity = '0';
