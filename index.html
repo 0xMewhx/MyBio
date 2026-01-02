@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0xMew | Security Researcher & Network Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Terminal Background Effect -->
+    <div class="terminal-bg" id="terminal">
+        <div class="terminal-content" id="terminal-content"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">0xMew</span>
+                <span class="logo-bracket">/&gt;</span>
+            </div>
+            <nav class="nav">
+                <a href="#about" class="nav-link">Обо мне</a>
+                <a href="#skills" class="nav-link">Навыки</a>
+                <a href="#projects" class="nav-link">Проекты</a>
+                <a href="#contact" class="nav-link">Контакт</a>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero" id="about">
+            <div class="hero-content">
+                <div class="hero-badge">🟢 ONLINE</div>
+                <h1 class="hero-title">
+                    <span class="typing-effect" data-text="Cyber Security"></span>
+                    <span class="hero-title-outline"> researcher</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Я — 0xMew. Сетевой исследователь, практикующий специалист по безопасности и просто человек, который любит разбираться в том, как работают вещи изнутри.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Часов в консоли</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Реальные кейсы</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">Скучных проектов</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner Section -->
+        <section class="banner-section">
+            <div class="banner-container">
+                <pre class="banner-art" id="banner-art">
+    ██████╗ ██╗  ██╗███╗   ███╗███████╗██╗    ██╗
+   ██╔═████╗╚██╗██╔╝████╗ ████║██╔════╝██║    ██║
+   ██║██╔██║ ╚███╔╝ ██╔████╔██║█████╗  ██║ █╗ ██║
+   ████╔╝██║ ██╔██╗ ██║╚██╔╝██║██╔══╝  ██║███╗██║
+   ╚██████╔╝██╔╝ ██╗██║ ╚═╝ ██║███████╗╚███╔███╔╝
+    ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝ ╚══╝╚══╝
+                </pre>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills-section" id="skills">
+            <h2 class="section-title">_НАВЫКИ</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <h3 class="skill-title">Сетевые технологии</h3>
+                    <p class="skill-desc">Глубокое понимание TCP/IP, NAT, маршрутизации. Работа с iptables, wireshark, tcpdump на продвинутом уровне.</p>
+                    <div class="skill-tags">
+                        <span class="tag">MITM</span>
+                        <span class="tag">ARP Spoofing</span>
+                        <span class="tag">Packet Analysis</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🔐</div>
+                    <h3 class="skill-title">Безопасность</h3>
+                    <p class="skill-desc">Практический опыт тестирования на проникновение. Работа с C2-серверами, реверс-инжиниринг протоколов.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Active Defense</span>
+                        <span class="tag">Protocol Analysis</span>
+                        <span class="tag">Fuzzing</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h3 class="skill-title">Программирование</h3>
+                    <p class="skill-desc">Python, Bash, немного C. Автоматизация задач, написание скриптов для анализа и эксплуатации.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Automation</span>
+                        <span class="tag">Security Tools</span>
+                        <span class="tag">Shell Scripts</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🎮</div>
+                    <h3 class="skill-title">Minecraft Server</h3>
+                    <p class="skill-desc">Создание и поддержка серверов с модами. Опыт работы с Fabric, настройка модпаков и балансировка.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Server Admin</span>
+                        <span class="tag">Modding</span>
+                        <span class="tag">Community</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section" id="projects">
+            <h2 class="section-title">_ПРОЕКТЫ</h2>
+            <div class="projects-grid">
+                <a href="https://mymine.fun" target="_blank" class="project-card">
+                    <div class="project-status completed">ACTIVE</div>
+                    <h3 class="project-title">MyMine.fun</h3>
+                    <p class="project-desc">Minecraft сервер с модами (Create, Better Combat). Сезон 3 в разгаре. Сборка, сайт, комьюнити — всё своими руками.</p>
+                    <div class="project-stack">
+                        <span>Minecraft</span>
+                        <span>Fabric</span>
+                        <span>GitHub Pages</span>
+                    </div>
+                </a>
+                <div class="project-card">
+                    <div class="project-status classified">RESEARCH</div>
+                    <h3 class="project-title">C2 Investigation</h3>
+                    <p class="project-desc">Обнаружение и анализ ботнета в локальной сети. Протокольный реверс-инжиниринг. Активное противодействие.</p>
+                    <div class="project-stack">
+                        <span>Wireshark</span>
+                        <span>curl</span>
+                        <span>iptables</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-status in-progress">BETA</div>
+                    <h3 class="project-title">Network Tools</h3>
+                    <p class="project-desc">Набор скриптов для анализа и мониторинга сети. MITM-фреймворк на Bash. Собираю и улучшаю.</p>
+                    <div class="project-stack">
+                        <span>Bash</span>
+                        <span>tcpdump</span>
+                        <span>bettercap</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section class="philosophy-section">
+            <div class="philosophy-content">
+                <h2 class="section-title">_ФИЛОСОФИЯ</h2>
+                <div class="philosophy-text">
+                    <p>Я не просто читаю документацию — я ломаю системы, чтобы понять, как они работают.</p>
+                    <p>Каждый странный пакет в сети — это загадка. Каждый закрытый порт — вызов.</p>
+                    <p>Если в моей сети есть что-то, что я не контролирую — я это найду.</p>
+                    <p>Если кто-то использует мою сеть для плохих целей — он об этом пожалеет.</p>
+                    <p class="philosophy-quote">"Если не я, то кто?"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <h2 class="section-title">_КОНТАКТ</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span class="contact-text">0xmew@proton.me</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🐙</span>
+                        <span class="contact-text">GitHub: @0xMew</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">💬</span>
+                        <span class="contact-text">Telegram: @bluzn</span>
+                    </div>
+                </div>
+                <div class="contact-note">
+                    <p>Если ты дочитал до сюда — ты либо мой друг, либо мы знакомы лично.</p>
+                    <p>Если ты случайный посетитель — добро пожаловать, но лучше иди на mymine.fun, там веселее. 🎮</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <span class="footer-text">© 2025-2026 0xMew. All rights reserved.</span>
+                <span class="footer-status">System Status: <span class="status-ok">SECURE</span></span>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
