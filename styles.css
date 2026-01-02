@@ -77,14 +77,16 @@ body {
     width: 100%;
     height: 100%;
     font-family: var(--font-mono);
-    font-size: 9px;
-    color: var(--terminal-white);
+    font-size: 10px; /* Чуть увеличим для читаемости */
+    color: rgba(255, 255, 255, 0.15);
     white-space: pre-wrap;
-    padding: 15px;
+    padding: 20px;
     overflow: hidden;
     pointer-events: none;
+    /* Создаем две колонки для эффекта заполнения */
+    column-count: 2;
+    column-gap: 40px;
 }
-
 /* Main Content */
 .main-content {
     position: relative;
