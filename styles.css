@@ -355,10 +355,10 @@ body {
     }
     .hero {
         padding: 120px 20px 80px;
-        background: rgba(8, 8, 8, 0.85);
     }
     .hero-desc {
         margin-bottom: 50px;
+        color: #ffffff;
     }
     .hero-left {
         max-width: 100%;
