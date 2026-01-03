@@ -10,20 +10,40 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Terminal Background with Banner -->
     <div class="terminal-bg" id="terminal">
-        <pre class="terminal-banner">
+        <div class="banner-column">
+            <pre class="terminal-banner">
     ██████╗ ██╗  ██╗███╗   ███╗███████╗██╗    ██╗
    ██╔═████╗╚██╗██╔╝████╗ ████║██╔════╝██║    ██║
    ██║██╔██║ ╚███╔╝ ██╔████╔██║█████╗  ██║ █╗ ██║
    ████╔╝██║ ██╔██╗ ██║╚██╔╝██║██╔══╝  ██║███╗██║
    ╚██████╔╝██╔╝ ██╗██║ ╚═╝ ██║███████╗╚███╔███╔╝
-    ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝ ╚══╝╚══╝
-        </pre>
+    ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝ ╚══╝╚══╝</pre>
+            <pre class="terminal-banner">
+    ██████╗ ██╗  ██╗███╗   ███╗███████╗██╗    ██╗
+   ██╔═████╗╚██╗██╔╝████╗ ████║██╔════╝██║    ██║
+   ██║██╔██║ ╚███╔╝ ██╔████╔██║█████╗  ██║ █╗ ██║
+   ████╔╝██║ ██╔██╗ ██║╚██╔╝██║██╔══╝  ██║███╗██║
+   ╚██████╔╝██╔╝ ██╗██║ ╚═╝ ██║███████╗╚███╔███╔╝
+    ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝ ╚══╝╚══╝</pre>
+            <pre class="terminal-banner">
+    ██████╗ ██╗  ██╗███╗   ███╗███████╗██╗    ██╗
+   ██╔═████╗╚██╗██╔╝████╗ ████║██╔════╝██║    ██║
+   ██║██╔██║ ╚███╔╝ ██╔████╔██║█████╗  ██║ █╗ ██║
+   ████╔╝██║ ██╔██╗ ██║╚██╔╝██║██╔══╝  ██║███╗██║
+   ╚██████╔╝██╔╝ ██╗██║ ╚═╝ ██║███████╗╚███╔███╔╝
+    ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝ ╚══╝╚══╝</pre>
+            <pre class="terminal-banner">
+    ██████╗ ██╗  ██╗███╗   ███╗███████╗██╗    ██╗
+   ██╔═████╗╚██╗██╔╝████╗ ████║██╔════╝██║    ██║
+   ██║██╔██║ ╚███╔╝ ██╔████╔██║█████╗  ██║ █╗ ██║
+   ████╔╝██║ ██╔██╗ ██║╚██╔╝██║██╔══╝  ██║███╗██║
+   ╚██████╔╝██╔╝ ██╗██║ ╚═╝ ██║███████╗╚███╔███╔╝
+    ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝ ╚══╝╚══╝</pre>
+        </div>
         <div class="terminal-content" id="terminal-content"></div>
     </div>
 
-    <!-- Main Content -->
     <main class="main-content">
         <header class="header">
             <div class="logo">&lt;0xMew/&gt;</div>
@@ -42,18 +62,9 @@
                     нашёл ботнет в своей локалке — сломал его. делаю сайты для майнкрафт-серверов.
                 </p>
                 <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-num">∞</span>
-                        <span class="stat-txt">часов в терминале</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-num">1</span>
-                        <span class="stat-txt">ботнет уничтожен</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-num">2</span>
-                        <span class="stat-txt">крутых сайта</span>
-                    </div>
+                    <div class="stat"><span class="stat-num">∞</span><span class="stat-txt">часов в терминале</span></div>
+                    <div class="stat"><span class="stat-num">1</span><span class="stat-txt">ботнет уничтожен</span></div>
+                    <div class="stat"><span class="stat-num">2</span><span class="stat-txt">крутых сайта</span></div>
                 </div>
             </div>
         </section>
@@ -65,44 +76,26 @@
                     <div class="project-status live">● LIVE</div>
                     <h3>MyMine.fun 🎮</h3>
                     <p>minecraft сервер с модами. create + better combat. сезон 3 идёт.</p>
-                    <div class="tags">
-                        <span>minecraft</span><span>fabric</span>
-                    </div>
+                    <div class="tags"><span>minecraft</span><span>fabric</span></div>
                 </a>
-                  <a href="#" class="project-card">
+                <a href="#" class="project-card">
                     <div class="project-status classified">█ CLASSIFIED</div>
                     <h3>c2 investigation 🔥</h3>
-                    <p>обнаружил ботнет. разобрал протокол. сломал фаззингом. логи забиты моим ascii-артом.</p>
-                    <div class="tags">
-                        <span>botnet</span><span>active defense</span>
-                    </div>
+                    <p>обнаружил ботнет. разобрал протокол. сломал фаззингом.</p>
+                    <div class="tags"><span>botnet</span><span>active defense</span></div>
                 </a>
                 <a href="#" class="project-card">
                     <div class="project-status dev">● DEV</div>
                     <h3>network tools 🛠️</h3>
-                    <p>скрипты для анализа сети. mitm, сниффер, поиск подозрительной активности.</p>
-                    <div class="tags">
-                        <span>bash</span><span>tcpdump</span>
-                    </div>
+                    <p>скрипты для анализа сети. mitm, сниффер, поиск аномалий.</p>
+                    <div class="tags"><span>bash</span><span>tcpdump</span></div>
                 </a>
-                <div class="project-card">
+                <a href="#" class="project-card">
                     <div class="project-status this">◉ THIS</div>
                     <h3>0xmew.site ⚡</h3>
-                    <p>сайт-портфолио. сделан за вечер. github pages + бесплатный ssl.</p>
-                    <div class="tags">
-                        <span>html/css</span><span>github pages</span>
-                    </div>
+                    <p>сайт-портфолио. сделан за вечер. github pages.</p>
+                    <div class="tags"><span>html/css</span><span>github pages</span></div>
                 </a>
-            </div>
-        </section>
-
-        <section class="philosophy">
-            <div class="philosophy-box">
-                <p>я не читаю документацию. я ломаю системы и смотрю что внутри.</p>
-                <p>каждый странный пакет — загадка. каждый закрытый порт — вызов.</p>
-                <p>если в моей сети есть что-то, что я не контролирую — я это найду.</p>
-                <p>если кто-то юзает мою сеть для плохого — он об этом пожалеет.</p>
-                <p class="quote">"если не я, то кто?"</p>
             </div>
         </section>
 
@@ -127,7 +120,6 @@
             </div>
             <div class="contact-note">
                 <p>если дочитал до сюда — ты либо мой друг, либо мы знакомы.</p>
-                <p>если случайный — добро пожаловать. но лучше на mymine.fun.</p>
             </div>
         </section>
 
