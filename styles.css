@@ -905,33 +905,19 @@ body {
         padding: 18px 20px;
 
     }
-    /* Настройка всего скроллбара */
 ::-webkit-scrollbar {
-    width: 8px; /* Ширина скролла */
-    background-color: var(--bg-dark); /* Фон дорожки под цвет сайта */
+    width: 8px;
+    background-color: var(--bg-dark);
 }
-
-/* Сама ползушка (которую ты тянешь) */
 ::-webkit-scrollbar-thumb {
-    background: rgba(139, 92, 246, 0.3); /* Твой акцентный фиолетовый, но полупрозрачный */
+    background: rgba(139, 92, 246, 0.3);
     border-radius: 10px;
-    border: 2px solid var(--bg-dark); /* Отступ, чтобы ползунок казался тоньше */
-    transition: all 0.3s ease;
+    border: 2px solid var(--bg-dark);
 }
-
-/* Ползушка при наведении */
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(139, 92, 246, 0.6); /* Становится ярче, когда трогаешь */
-    box-shadow: 0 0 10px var(--accent); /* Добавляем небольшое свечение */
+    background: rgba(139, 92, 246, 0.6);
+    box-shadow: 0 0 10px var(--accent);
 }
-
-/* Дорожка, по которой едет ползунок */
 ::-webkit-scrollbar-track {
     background: transparent;
-}
-
-/* Для Firefox (у него свои настройки) */
-* {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(139, 92, 246, 0.3) transparent;
 }
