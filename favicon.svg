@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>0xMew Icon</title>
+  <rect width="64" height="64" rx="12" fill="#080808"/>
+  <text x="32" y="30" font-family="monospace, 'Courier New', Consolas" font-size="20" font-weight="bold" fill="#8b5cf6" text-anchor="middle">0x</text>
+  <text x="32" y="48" font-family="monospace, 'Courier New', Consolas" font-size="14" font-weight="bold" fill="#8b5cf6" text-anchor="middle">mew</text>
+</svg>
