@@ -84,7 +84,6 @@ body {
     overflow: hidden;
     pointer-events: none;
     /* Создаем две колонки для эффекта заполнения */
-    column-count: 2;
     column-gap: 40px;
 }
 /* Main Content */
@@ -356,15 +355,28 @@ body {
     border-radius: 10px;
     text-decoration: none;
     color: #ffffff !important;
-    transition: all 0.2s ease;
+    /* Сделали транзишн чуть медленнее для мягкости */
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .contact-card:hover {
-    border-color: var(--accent);
+    /* Поднимаем вверх и подсвечиваем */
+    transform: translateY(-8px);
+    border-color: var(--accent) !important;
+    background: rgba(139, 92, 246, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+}
+
+/* Эффект для иконки при наведении на карточку */
+.contact-card:hover .contact-icon {
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 5px var(--accent));
 }
 
 .contact-icon {
     font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
 }
 
 .contact-text {
