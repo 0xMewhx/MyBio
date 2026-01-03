@@ -1,4 +1,3 @@
-// Terminal Effect - /dev/urandom style
 class TerminalEffect {
     constructor() {
         this.terminal = document.getElementById('terminal-content');
@@ -62,14 +61,12 @@ class TerminalEffect {
             '0xMew@arch:~$ _',
         ];
         this.currentLine = 0;
-        this.lineDelay = 60; // Немного ускорил
+        this.lineDelay = 60;
         this.init();
     }
-
     init() {
         this.typeLine();
     }
-
     generateHex(length) {
         const chars = '0123456789abcdef';
         let result = '0x';
@@ -78,49 +75,34 @@ class TerminalEffect {
         }
         return result;
     }
-
     getUptime() {
         return (Math.floor(Math.random() * 10) + 1) + 'd ' + Math.floor(Math.random() * 24) + 'h';
     }
-
     getMemory() {
         return (Math.random() * 3 + 1).toFixed(2) + 'GB / 16.00GB';
     }
-
     typeLine() {
-        // Если дошли до конца массива команд
         if (this.currentLine >= this.commands.length) {
             this.currentLine = 0;
-            // Если экран переполнен (более 60 строк), чистим для оптимизации
             if (this.terminal.childNodes.length > 60) {
                 this.terminal.innerHTML = ''; 
             }
         }
-
         const line = this.commands[this.currentLine];
         const lineElement = document.createElement('div');
-        
-        // Случайный отступ слева (0-15px) для хаотичности
         lineElement.style.paddingLeft = Math.floor(Math.random() * 15) + 'px';
         lineElement.style.opacity = '0';
-
         let formatted = this.formatLine(line);
         lineElement.innerHTML = formatted;
         this.terminal.appendChild(lineElement);
-
-        // Плавное появление
         setTimeout(() => {
             lineElement.style.transition = 'opacity 0.2s ease';
             lineElement.style.opacity = '1';
         }, 5);
-
-        
-
         this.currentLine++;
         const delay = this.lineDelay + Math.random() * 50;
         setTimeout(() => this.typeLine(), delay);
     }
-
     formatLine(line) {
         let formatted = line;
         if (line.includes('[BOOT]')) formatted = `<span style="color: #3b82f6;">[BOOT]</span>${line.substring(6)}`;
@@ -131,16 +113,11 @@ class TerminalEffect {
         else if (line.includes('0xMew@')) formatted = `<span style="color: #a855f7;">${line.split('@')[0]}</span>@${line.split('@')[1]}`;
         else if (line === '') return '<br>';
         else if (line.includes('_')) return '<span style="color: #22c55e;">></span> <span class="cursor">_</span>';
-        
         return formatted;
     }
 }
-
-// Запуск при загрузке
 document.addEventListener('DOMContentLoaded', () => {
     new TerminalEffect();
-
-    // Blink cursor
     let cursorVisible = true;
     setInterval(() => {
         document.querySelectorAll('.cursor').forEach(c => {
