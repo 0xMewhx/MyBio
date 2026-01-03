@@ -1,982 +1,392 @@
-/* CSS - Original design, not copied */
-
 :root {
-
     --bg-light: #f5f5f5;
-
     --bg-white: #ffffff;
-
     --bg-dark: #080808;
-
     --terminal-green: #22c55e;
-
     --terminal-white: rgba(255, 255, 255, 0.15);
-
     --text-dark: #1a1a1a;
-
     --text-gray: #6b6b6b;
-
     --text-muted: #9a9a9a;
-
     --accent: #8b5cf6;
-
     --accent-dim: rgba(139, 92, 246, 0.15);
-
     --border: #e0e0e0;
-
     --success: #22c55e;
-
     --warning: #f59e0b;
-
     --danger: #ef4444;
-
     --font-mono: 'JetBrains Mono', monospace;
-
     --font-sans: 'Inter', -apple-system, sans-serif;
-
 }
-
-
-
 * {
-
     margin: 0;
-
     padding: 0;
-
     box-sizing: border-box;
-
 }
-
-
-
 html {
-
     scroll-behavior: smooth;
-
 }
-
-
-
 body {
-
     font-family: var(--font-sans);
-
     background: var(--bg-dark);
-
     color: #e0e0e0;
-
 }
-
-
-
-/* Terminal Background */
-
 .terminal-bg {
-
     position: fixed;
-
     top: 0;
-
     left: 0;
-
     width: 100%;
-
     height: 100%;
-
     background: var(--bg-dark);
-
     z-index: 0;
-
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
-
     align-items: center;
-
 }
-
-
-
 .terminal-banner {
-
     font-family: var(--font-mono);
-
     font-size: clamp(10px, 1.5vw, 18px);
-
     line-height: 1.12;
-
     color: var(--accent);
-
     text-align: center;
-
     white-space: pre;
-
     opacity: 0.2;
-
     position: relative;
-
-    /* Добавляем анимацию глитча */
-
     animation: glow 3s ease-in-out infinite alternate, glitch 5s infinite;
-
 }
-
-
-
 @keyframes glitch {
-
     0%, 95%, 100% { transform: translate(0); text-shadow: 0 0 10px var(--accent-dim); }
-
     96% { transform: translate(-2px, 1px); text-shadow: 2px 0 #ff00c1, -2px 0 #00fff9; }
-
     97% { transform: translate(2px, -1px); }
-
     98% { transform: translate(-1px, -2px); }
-
     99% { transform: translate(1px, 2px); }
-
 }
-
-
-
 .terminal-content {
-
     position: absolute;
-
     top: 0;
-
     left: 0;
-
     width: 100%;
-
     height: 100%;
-
     font-family: var(--font-mono);
-
-    font-size: 10px; /* Чуть увеличим для читаемости */
-
+    font-size: 10px;
     color: rgba(255, 255, 255, 0.15);
-
     white-space: pre-wrap;
-
     padding: 20px;
-
     overflow: hidden;
-
     pointer-events: none;
-
-    /* Создаем две колонки для эффекта заполнения */
-
     column-gap: 40px;
-
 }
-
-/* Main Content */
-
 .main-content {
-
     position: relative;
-
     z-index: 1;
-
     background: transparent
-
 }
-
-
-
-/* Header */
-
 .header {
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     padding: 25px 50px;
-
     position: fixed;
-
     top: 0;
-
     left: 0;
-
     width: 100%;
-
     background: rgba(13, 13, 13, 0.8);
-
     backdrop-filter: blur(8px);
-
     z-index: 100;
-
     box-sizing: border-box;
-
     border-bottom: 1px solid rgba(139, 92, 246, 0.2);
-
 }
-
-
-
 .logo {
-
     font-family: var(--font-mono);
-
     font-size: 1.1rem;
-
     font-weight: 700;
-
-    color: var(--accent) !important; /* Делаем фиолетовым как баннер */
-
+    color: var(--accent) !important;
     letter-spacing: -1px;
-
 }
-
-
-
 .nav {
-
     display: flex;
-
     gap: 35px;
-
 }
-
-
-
 .nav a {
-
-    color: #ffffff; /* Белые ссылки */
-
+    color: #ffffff;
     text-decoration: none;
-
     font-size: 0.85rem;
-
     transition: color 0.2s;
-
 }
-
-
-
 .nav a:hover {
-
-    color: var(--accent); /* Фиолетовый при наведении */
-
+    color: var(--accent);
 }
-
-
-
-/* Hero */
-
 .hero {
-
     min-height: 100vh;
-
     display: flex;
-
     align-items: center;
-
     padding: 140px 50px 60px;
-
 }
-
-
-
 .hero-left {
-
     max-width: 420px;
-
 }
-
-
-
 .hero-title {
-
     font-size: clamp(2rem, 3.5vw, 2.8rem);
-
     font-weight: 600;
-
     line-height: 1.1;
-
     letter-spacing: -0.5px;
-
     margin-bottom: 22px;
-
     color: #ffffff;
-
 }
-
-
-
 .hero-desc {
-
     font-size: 0.9rem;
-
     color: var(--accent);
-
     line-height: 1.7;
-
     margin-bottom: 32px;
-
 }
-
-
-
 .hero-stats {
-
     display: flex;
-
     gap: 35px;
-
 }
-
-
-
 .stat {
-
     text-align: left;
-
 }
-
-
-
 .stat-num {
-
     display: block;
-
     font-family: var(--font-mono);
-
     font-size: 1.6rem;
-
     font-weight: 700;
-
     color: var(--accent);
-
     margin-bottom: 3px;
-
 }
-
-
-
 .stat-txt {
-
     font-size: 0.7rem;
-
     color: var(--text-muted);
-
     text-transform: uppercase;
-
     letter-spacing: 0.5px;
-
 }
-
-
-
-/* Projects */
-
 .projects {
-
     padding: 70px 50px;
-
     max-width: 800px;
-
     margin: 0 auto;
-
 }
-
-
-
 .section-title {
-
     font-family: var(--font-mono);
-
     font-size: 0.75rem;
-
     font-weight: 700;
-
     color: var(--text-muted);
-
     margin-bottom: 25px;
-
     letter-spacing: 2px;
-
     text-transform: uppercase;
-
 }
-
-
-
 .projects-grid {
-
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 18px;
-
 }
-
-
-
 .project-card {
-
     background: rgba(20, 20, 20, 0.6) !important;
-
     backdrop-filter: blur(4px);
-
     border: 1px solid rgba(139, 92, 246, 0.2) !important;
-
     border-radius: 12px;
-
     padding: 22px;
-
     text-decoration: none;
-
     color: #ffffff !important;
-
     transition: all 0.2s ease;
-
 }
-
-
-
 .project-card:hover {
-
     border-color: var(--accent);
-
     transform: translateY(-2px);
-
     background: rgba(139, 92, 246, 0.2);
-
     box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
-
 }
-
-
-
 .project-status {
-
     display: inline-block;
-
     font-family: var(--font-mono);
-
     font-size: 0.55rem;
-
     padding: 3px 7px;
-
     border-radius: 4px;
-
     margin-bottom: 10px;
-
 }
-
-
-
 .project-status.live {
-
     background: rgba(34, 197, 94, 0.1);
-
     color: var(--success);
-
 }
-
-
-
 .project-status.classified {
-
     background: rgba(239, 68, 68, 0.1);
-
     color: var(--danger);
-
 }
-
-
-
 .project-status.dev {
-
     background: rgba(245, 158, 11, 0.1);
-
     color: var(--warning);
-
 }
-
-
-
 .project-status.this {
-
     background: rgba(139, 92, 246, 0.1);
-
     color: var(--accent);
-
 }
-
-
-
 .project-card h3 {
-
     font-size: 1rem;
-
     font-weight: 600;
-
     margin-bottom: 8px;
-
     color: var(--accent) !important;
-
 }
-
-
-
 .project-card p {
-
     font-size: 0.8rem;
-
     color: #b0b0b0 !important;
-
     margin-bottom: 12px;
-
     line-height: 1.5;
-
 }
-
-
-
 .tags {
-
     display: flex;
-
     gap: 6px;
-
 }
-
-
-
 .tags span {
-
     font-family: var(--font-mono);
-
     font-size: 0.65rem;
-
     padding: 2px 8px;
-
     background: rgba(139, 92, 246, 0.1);
-
     border: 1px solid rgba(139, 92, 246, 0.3);
-
     border-radius: 4px;
-
     color: var(--accent);
-
     text-transform: lowercase;
-
     transition: all 0.2s ease;
-
 }
-
-
-
-/* Philosophy */
-
 .philosophy {
-
     padding: 70px 50px;
-
     max-width: 600px;
-
     margin: 0 auto;
-
 }
-
-
-
 .philosophy-box {
-
     background: var(--bg-dark);
-
     border-radius: 14px;
-
     padding: 35px;
-
 }
-
-
-
 .philosophy-box p {
-
     font-size: 0.85rem;
-
     line-height: 1.8;
-
     margin-bottom: 12px;
-
     color: rgba(255, 255, 255, 0.75);
-
 }
-
-
-
 .philosophy-box p:first-child {
-
     color: #ffffff;
-
 }
-
-
-
 .quote {
-
     font-family: var(--font-mono);
-
     font-size: 1.1rem;
-
     color: var(--accent);
-
     margin-top: 20px !important;
-
     padding-left: 15px;
-
     border-left: 2px solid var(--accent);
-
 }
-
-
-
-/* Contact */
-
 .contact {
-
     padding: 70px 50px;
-
     background: transparent !important;
-
     text-align: center;
-
 }
-
-
-
 .contact .section-title {
-
     display: block;
-
     text-align: center;
-
     margin-bottom: 25px;
-
 }
-
-
-
 .contact-grid {
-
     display: flex;
-
     justify-content: center;
-
     gap: 15px;
-
     max-width: 650px;
-
     margin: 0 auto 20px;
-
 }
-
-
-
 .contact-card {
-
     flex: 1;
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     gap: 6px;
-
     padding: 20px 12px;
-
     background: rgba(20, 20, 20, 0.6) !important;
-
     backdrop-filter: blur(4px);
-
     border: 1px solid rgba(139, 92, 246, 0.2) !important;
-
     border-radius: 10px;
-
     text-decoration: none;
-
     color: #ffffff !important;
-
-    /* Сделали транзишн чуть медленнее для мягкости */
-
     transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-
 }
-
-
-
 .contact-card:hover {
-
-    /* Поднимаем вверх и подсвечиваем */
-
     transform: translateY(-8px);
-
     border-color: var(--accent) !important;
-
     background: rgba(139, 92, 246, 0.1) !important;
-
     box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
-
 }
-
-
-
-/* Эффект для иконки при наведении на карточку */
-
 .contact-card:hover .contact-icon {
-
     filter: drop-shadow(0 0 5px var(--accent));
-
     transform: rotate(360deg) scale(1.4);
-
 }
-
-
-
 .contact-icon {
-
     font-size: 1.3rem;
-
-    display: inline-block; /* Обязательно, чтобы трансформация работала корректно */
-
-    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); /* Плавный отскок в конце */
-
+    display: inline-block;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-
-}
-
-
-
 .contact-text {
-
     font-family: var(--font-mono);
-
     font-size: 0.75rem;
-
     color: var(--accent) !important;
-
 }
-
-
-
 .contact-desc {
-
     font-size: 0.65rem;
-
     color: var(--text-muted);
-
 }
-
-
-
 .contact-note {
-
     max-width: 450px;
-
     margin: 0 auto;
-
     padding: 16px;
-
     border: 1px solid rgba(139, 92, 246, 0.1);
-
     background: rgba(139, 92, 246, 0.05) !important;
-
     border-radius: 8px;
-
 }
-
-
-
 .contact-note p {
-
     font-size: 0.75rem;
-
     color: var(--text-muted);
-
     margin-bottom: 5px;
-
 }
-
-
-
 .contact-note p:last-child {
-
     margin-bottom: 0;
-
 }
-
-
-
-/* Footer */
-
 .footer {
-
     display: flex;
-
     justify-content: space-between;
-
     padding: 20px 50px;
-
     background: rgba(10, 10, 10, 0.9) !important;
-
     border-top: 1px solid rgba(139, 92, 246, 0.2) !important;
-
     font-size: 0.7rem;
-
     color: #666 !important;
-
 }
-
-
-
 .status {
-
     font-family: var(--font-mono);
-
     color: var(--success);
-
 }
-
-
-
-/* Responsive */
-
 @media (max-width: 768px) {
-
-    .header {
-
-        padding: 18px 20px;
-
-    }
-
-
-
-    .nav {
-
-        gap: 22px;
-
-    }
-
-
-
-    .hero {
-
-        padding: 120px 20px 50px;
-
-    }
-
-
-
-    .hero-stats {
-
-        flex-wrap: wrap;
-
-        gap: 22px;
-
-    }
-
-
-
-    .projects {
-
-        padding: 50px 20px;
-
-    }
-
-
-
-    .projects-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-
-    .philosophy {
-
-        padding: 50px 20px;
-
-    }
-
-
-
-    .philosophy-box {
-
-        padding: 25px 20px;
-
-    }
-
-
-
-    .contact {
-
-        padding: 50px 20px;
-
-    }
-
-
-
-    .contact-grid {
-
-        flex-direction: column;
-
-    }
-
-
-
-    .footer {
-
-        flex-direction: column;
-
-        gap: 8px;
-
-        text-align: center;
-
-        padding: 18px 20px;
-
-    }
-    /* Настройка всего скроллбара */
-::-webkit-scrollbar {
-    width: 8px; /* Ширина скролла */
-    background-color: var(--bg-dark); /* Фон дорожки под цвет сайта */
+    .header { padding: 18px 20px; }
+    .nav { gap: 22px; }
+    .hero { padding: 120px 20px 50px; }
+    .hero-stats { flex-wrap: wrap; gap: 22px; }
+    .projects { padding: 50px 20px; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .philosophy { padding: 50px 20px; }
+    .philosophy-box { padding: 25px 20px; }
+    .contact { padding: 50px 20px; }
+    .contact-grid { flex-direction: column; }
+    .footer { flex-direction: column; gap: 8px; text-align: center; padding: 18px 20px; }
 }
-
-/* Сама ползушка (которую ты тянешь) */
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--bg-dark);
+}
 ::-webkit-scrollbar-thumb {
-    background: rgba(139, 92, 246, 0.3); /* Твой акцентный фиолетовый, но полупрозрачный */
+    background: rgba(139, 92, 246, 0.3);
     border-radius: 10px;
-    border: 2px solid var(--bg-dark); /* Отступ, чтобы ползунок казался тоньше */
+    border: 2px solid var(--bg-dark);
     transition: all 0.3s ease;
 }
-
-/* Ползушка при наведении */
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(139, 92, 246, 0.6); /* Становится ярче, когда трогаешь */
-    box-shadow: 0 0 10px var(--accent); /* Добавляем небольшое свечение */
+    background: rgba(139, 92, 246, 0.6);
+    box-shadow: 0 0 10px var(--accent);
 }
-
-/* Дорожка, по которой едет ползунок */
 ::-webkit-scrollbar-track {
     background: transparent;
 }
-
-/* Для Firefox (у него свои настройки) */
 * {
     scrollbar-width: thin;
     scrollbar-color: rgba(139, 92, 246, 0.3) transparent;
