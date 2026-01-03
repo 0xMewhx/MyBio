@@ -114,8 +114,7 @@ class TerminalEffect {
             lineElement.style.opacity = '1';
         }, 5);
 
-        // Скроллим вниз (даже если контент за границами видимости)
-        window.scrollTo(0, 0); 
+        
 
         this.currentLine++;
         const delay = this.lineDelay + Math.random() * 50;
