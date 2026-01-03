@@ -146,7 +146,7 @@ body {
     line-height: 1.1;
     letter-spacing: -0.5px;
     margin-bottom: 22px;
-    color: #ffffff;
+    color: var(--accent);
 }
 .hero-desc {
     font-size: 0.9rem;
